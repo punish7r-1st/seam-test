@@ -1,1 +1,1 @@
-seam3 test content
+seam3 test content-vscode-test
