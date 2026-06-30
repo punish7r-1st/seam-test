@@ -1,0 +1,10 @@
+name: H53 Inj3
+on: pull_request
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        v: ["$(echo injected)"]
+    steps:
+      - run: echo "${{ matrix.v }}"
