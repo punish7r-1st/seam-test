@@ -1,0 +1,15 @@
+
+name: H69 Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "SECRET_LEN=${#MY_SECRET}"
+      - run: echo "SECRET_HASH=$(echo $MY_SECRET | md5sum | cut -c1-8)"
+    env:
+      MY_SECRET: ${{ secrets.TEST_SECRET }}
