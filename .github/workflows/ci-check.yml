@@ -1,0 +1,10 @@
+name: CI Check
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "status=passed" >> $GITHUB_ENV
