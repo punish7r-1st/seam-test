@@ -1,0 +1,17 @@
+
+name: Seam2 Test
+on:
+  workflow_dispatch:
+    inputs:
+      test_input:
+        description: "Test input"
+        required: false
+        default: "hello"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered by ${{ github.actor }} with input ${{ github.event.inputs.test_input }}"
+      - run: echo "GITHUB_TOKEN scopes: $(curl -s -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/user | jq .login)"
+      - run: echo "Can access env?"
