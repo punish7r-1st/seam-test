@@ -1,0 +1,10 @@
+name: H69 Secret Test
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "VAL=H69_OLD_VALUE"
+      - run: echo "SECRET_LEN=${#H69_SECRET}"
+    env:
+      H69_SECRET: ${{ secrets.H69_SECRET }}
